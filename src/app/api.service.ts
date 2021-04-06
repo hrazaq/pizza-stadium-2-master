@@ -30,7 +30,8 @@ export class ApiService {
     return this.httpClient.get<Family[]>(`${this.PHP_API_SERVER}/get-all-family-type`, {params: params});
   }
 
-  getMenus(): Observable<Family[]>{
+  getMenus(user_id = null): Observable<Family[]>{
+    let params = new HttpParams().set("id",user_id);
     return this.httpClient.get<Family[]>(`${this.PHP_API_SERVER}/get-all-menu-family-type`);
   }
 

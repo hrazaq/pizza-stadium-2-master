@@ -33,6 +33,8 @@ import { PopupCartComponent } from './components/popup-cart/popup-cart.component
 import { CmdModesComponent } from './components/cmd-modes/cmd-modes.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 
+import { ProductCardV3Component } from "./product-card-v3/product-card-v3.component";
+
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -73,7 +75,8 @@ registerLocaleData(localeFr);
     MenuDetailsV2Component,
     PopupCartComponent,
     SearchFormComponent,
-    CmdModesComponent
+    CmdModesComponent,
+    ProductCardV3Component
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'},

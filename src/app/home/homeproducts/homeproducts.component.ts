@@ -7,6 +7,7 @@ import { Product } from 'src/app/models/product';
 import { CommunicationService } from 'src/app/communication.service';
 import { ActivatedRoute } from '@angular/router';
 import { GlobalConsts } from 'src/app/utils/global-consts';
+import { ThaiProduct } from 'src/app/models/thaiProduct';
 
 @Component({
   selector: 'app-homeproducts',
@@ -35,13 +36,24 @@ export class HomeproductsComponent implements OnInit {
   @Input() nav_open = 0;
   @Output() nav_openChange = new EventEmitter<number>();
 
+  // Dump data for Thai, I didnt found them in the API
+  thaiList: ThaiProduct[] = [
+    {name: 'Menus', picture: 'assets/images/thai/Menus_woks.png'},
+    {name: 'Pad Thai', picture: 'assets/images/thai/PAD_THAI.png'},
+    {name: "Bo'Buns", picture: 'assets/images/thai/BOBUN.png'},
+    {name: "Entrées", picture: 'assets/images/thai/NEMx02.png'},
+    {name: "Nouilles", picture: 'assets/images/thai/Nouilles_Legumes.png'},
+    {name: "Salade Thai", picture: 'assets/images/thai/Salade_thai.png'}
+  ]
+
   constructor(private communicationService: CommunicationService, private apiService: ApiService, private dataService: DataService, private toastr: ToastrService) {
     this.apiService.getFamilies(this.user.id).subscribe((FamilyList: Family[])=>{
       this.FamilyList = FamilyList;
-
+      console.log('famillies : ', this.FamilyList);
       FamilyList.forEach(element => {
         this.productList = this.productList.concat(element.menu_list);
       });
+      console.log('productlist : ', this.thaiList);
     });
     
     /* this.apiService.getMenus().subscribe((MenuFamilyList: Family[])=>{
@@ -53,6 +65,8 @@ export class HomeproductsComponent implements OnInit {
     this.communicationService.message.subscribe(message => {
       this.nav_open = message;
     });
+   
+    
   }
 
   get asset_url() {
