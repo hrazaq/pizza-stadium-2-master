@@ -5,17 +5,36 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="slider_flower">
+                     <img src="assets/images/thai/Fleur.png" width="400" height="300">
+                  </div>
                   <div class="slider__content">
-                     <div class="slider__inner">
-                        <h1>Stadium PIZZA</h1>
-                        <!-- <img src="assets/images/logo.png" alt="Stadium PIZZA"> -->
-                        <h2>Ouvert 7j/7 de 11h30 à 15h et de 18h à 23h, non stop!</h2>
-                        <div class="fadeInRight-3 btn-cmd-mode" style="opacity: 1; left: 0px;" *ngIf="order_modes">
-                           <a href="javascript:void(0)" class="btn btn-medium btn-primary" [class.selected]="cmdMode=='delivery'" (click)="chooseCmdMode('delivery')" *ngIf="order_modes.includes('delivery')"><i class="fa fa-home" aria-hidden="true"></i> Livraison</a>
-                           <a href="javascript:void(0)" class="btn btn-medium btn-primary" [class.selected]="cmdMode=='to_take_away'" (click)="chooseCmdMode('to_take_away')" *ngIf="order_modes.includes('to_take_away')"><i class="fa fa-shopping-bag" aria-hidden="true"></i> À emporter</a>
-                           <a href="javascript:void(0)" class="btn btn-medium btn-primary" [class.selected]="cmdMode=='place'" (click)="chooseCmdMode('place')" *ngIf="order_modes.includes('place')"><i class="fa fa-cutlery" aria-hidden="true"></i> Sur place</a>
+                     <div class="slider_text">
+                        <div class="top_text">
+                           <h1 id="text_cercle" class="osez">Osez la différence avec</h1>
+                           <h2 class="nos">NOS</h2>
+                           <h2 class="pad">Pad</h2>
+                           <h2 class="thai">Thai</h2>
+                        </div>
+                        <div class="bottom_text">
+                           <h1 class="order">Commander avec le</h1>
+                           <a href="javascript:void(0)" class="btn btn-details btn-primary click-and-collect-btn">
+                              CLICK AND COLLECT
+                           </a>
                         </div>
                      </div>
+                     <div class="slider_img">
+                        <img src="assets/images/thai/PAD-THAI_TOP.png" alt="" width="600" height="650">
+                     </div>
+                  </div>
+                  <div class="slider_wok_logo">
+                     <img src="assets/images/thai/Home_wok_logo.png" width="200" height="200">
+                  </div>
+                  <div class="slider_grace_top">
+                     <img src="assets/images/thai/feuille.png" width="400" height="200">
+                  </div>
+                  <div class="slider_grace_bottom">
+                     <img src="assets/images/thai/feuille.png" width="600" height="400">
                   </div>
                </div>
             </div>

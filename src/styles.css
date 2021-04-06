@@ -6,6 +6,7 @@
   -moz-box-sizing:border-box;
   box-sizing:border-box
 }
+/* Start includes fonts */
 @font-face {
   font-family: AwesomeJourney;
   src: url(styles/font/AweSomE-JouRneY.otf);
@@ -14,6 +15,47 @@
   font-family: NexaLight;
   src: url(styles/font/Nexa-Light.otf);
 }
+@font-face {
+  font-family: Pacifico;
+  src: url(styles/font/Pacifico.ttf);
+}
+@font-face {
+  font-family: Go3v2;
+  src: url(styles/font/go3v2.ttf);
+}
+@font-face {
+  font-family: BloomsHeadline-Regular;
+  src: url(styles/font/BloomsHeadline-Regular.ttf);
+}
+@font-face {
+  font-family: Daikon;
+  src: url(styles/font/Daikon-Medium.ttf);
+}
+@font-face {
+  font-family: Nexa-Light;
+  src: url(styles/font/Nexa-Light.otf);
+}
+@font-face {
+  font-family: Amstagram;
+  src: url(styles/font/Amstagram.ttf);
+}
+@font-face {
+  font-family: MyriadVariableConcept-Italic;
+  src: url(styles/font/MyriadVariableConcept-Italic.otf);
+}
+@font-face {
+  font-family: Oswald-Bold;
+  src: url(styles/font/Oswald-Bold.ttf);
+}
+@font-face {
+  font-family: Oswald-Light;
+  src: url(styles/font/Oswald-Light.ttf);
+}
+@font-face {
+  font-family: Oswald-Regular;
+  src: url(styles/font/Oswald-Regular.ttf);
+}
+/* End includes fonts */
 article,aside,details,figcaption,figure,footer,header,nav,section,summary{
   display:block
 }
@@ -233,12 +275,12 @@ hr{
   height:1px
 }
 ::-moz-selection{
-  background:#f69324;
+  background:#c43b95;
   color:#fff;
   text-shadow:none
 }
 ::selection{
-  background:#f69324;
+  background:#c43b95;
   color:#fff;
   text-shadow:none
 }
@@ -254,6 +296,13 @@ body{
   color:#959595;
   font-weight:400
 }
+
+.mainmenu__wrap .container .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 ::-webkit-input-placeholder{
   color:#959595
 }
@@ -410,7 +459,7 @@ a#scrollUp:hover{
   color:#fff
 }
 .bg--theme{
-  background:#f69324
+  background:#c43b95
 }
 .bg--light{
   background:#999
@@ -487,8 +536,10 @@ a#scrollUp:hover{
   background-size:cover;
   background-position:right bottom;
 }
+/* slider_background */
 .bg-image-slider{
-  background-image:url(assets/images/bg/slider.jpg);
+  /* background-image:url(assets/images/bg/slate-texture-background.jpg); */
+  background-color: #000;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center center;
@@ -1297,7 +1348,7 @@ a#scrollUp:hover{
 }
 .food__btn{
   /* background:#d50c0d; */
-  background:#f69324;
+  background:#c43b95;
   border-radius:5px;
   color:#fff;
   display:inline-block;
@@ -1308,7 +1359,7 @@ a#scrollUp:hover{
   position:relative;
   transform:translateZ(0px);
   transition-duration:.5s;
-  border:1px solid #f69324;
+  border:1px solid #c43b95;
   font-weight:600;
 }
 .food__btn.white--btn{
@@ -1362,7 +1413,7 @@ a#scrollUp:hover{
   color:#fff
 }
 .food__btn.btn--green{
-  background:#f69324
+  background:#c43b95
 }
 .fd-btn.food__btn{
   border:0;
@@ -2293,7 +2344,7 @@ nav.main__menu__nav ul li a{
   padding-right:45px
 }
 .footer .ftr__title{
-  color:#f69324;
+  color:#c43b95;
   font-size:26px;
   font-weight:400;
   line-height:24px;
@@ -2595,7 +2646,80 @@ nav.main__menu__nav ul li a{
 .slide .slider__content{
   position:relative;
   z-index:3;
-  max-width: 600px;
+  /* max-width: 600px; */
+  display: flex;
+  justify-content: space-between;
+}
+.slide .slider__content .slider_text{
+  max-width: 300px;
+  margin-left: 5%;
+}
+.slider_flower img{
+  transform: rotate(-90deg);
+  position:absolute;
+  z-index: 0;
+  top: 185px;
+  left: -210px;
+}
+.slider_grace_top img{
+  transform: rotate(90deg);
+  position:absolute;
+  z-index: 1;
+  top: -10px;
+  right: -100px;
+}
+.slider_grace_bottom img{
+  transform: rotate(180deg);
+  position:absolute;
+  z-index: 3;
+  bottom: -40px;
+  right: -100px;
+}
+.slider_wok_logo img{
+  position:absolute;
+  /* text-align: center; */
+  z-index: 3;
+  top: -55px;
+  left: 35%;
+}
+.slide .slider__content .slider_text .top_text .osez{
+  font-size: 30px;
+  font-family: Pacifico;
+  color: white;
+}
+.slide .slider__content .slider_text .top_text .nos{
+  font-size: 45px;
+  font-family: Go3v2;
+  color: #c43b95;
+  text-align: center;
+  margin-top: -45px;
+}
+.slide .slider__content .slider_text .top_text .pad{
+  font-size: 150px;
+  font-family: Go3v2;
+  color: white;
+  text-align: left;
+  margin-top: -43px;
+  margin-left: -10px;
+}
+.slide .slider__content .slider_text .top_text .thai{
+  font-size: 150px;
+  font-family: Go3v2;
+  color: #c43b95;
+  text-align: right;
+  margin-top: -70px;
+  margin-left: 30px;
+}
+.slide .slider__content .slider_text .bottom_text .order{
+  font-size: 30px;
+  font-family: Oswald-Regular;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.slide .slider__content .slider_img img{
+  margin-top: -80px;
 }
 .slide .slider__content .slider__inner{
   text-align:center
@@ -2636,7 +2760,7 @@ nav.main__menu__nav ul li a{
   }
 }
 .slide .slider__content .slider__inner .btn{
-  background-color:#f69324;
+  background-color:#c43b95;
   border:0;
   margin:15px 5px 0;
   color:#fff;
@@ -3147,7 +3271,7 @@ div.slide__pizza img{
   position:relative
 }
 .service--2 .service__inner .service__hover__action{
-  background-color:#f69324;
+  background-color:#c43b95;
   height:100%;
   left:0;
   opacity:0;
@@ -3245,7 +3369,7 @@ div.slide__pizza img{
   margin-top:40px;
   position:relative;
   overflow:hidden;
-  border:1px solid #f69324;
+  border:1px solid #c43b95;
   padding:4px
 }
 .food__category__wrapper .food__item:hover .food__title h2{
@@ -3981,7 +4105,7 @@ ul.rating{
   padding-right:24px
 }
 .testimonial-inner--3 .testimonial__inner{
-  background:#f69324;
+  background:#c43b95;
   padding:20px 66px 20px 30px
 }
 .testimonial-inner--3 .testimonial__inner .testimonial__content{
@@ -4562,7 +4686,7 @@ ul.rating{
   position:relative
 }
 .pp__food__prize{
-  background:#f69324;
+  background:#c43b95;
   border-radius:100%;
   height:80px;
   left:-30px;
@@ -4869,7 +4993,7 @@ ul.rating{
   z-index:1
 }
 .food__offer .offer__thumb .offer__product__prize::before{
-  background:#f69324;
+  background:#c43b95;
   content:"";
   height:100%;
   margin-left:-62px;
@@ -5382,7 +5506,7 @@ ul.rating{
 }
 .grid__prize__list li{
   display:inline-block;
-  color:#f69324;
+  color:#c43b95;
   font-family:Montserrat,sans-serif;
   font-size:20px;
   font-weight:700;
@@ -5577,7 +5701,7 @@ ul.rating{
 .single__food__list .food__list__inner .food__list__details .heading i{
   font-size:20px;
   padding-left:6px;
-  color:#f69324
+  color:#c43b95
 }
 .single__food__list .food__list__inner .food__list__details .heading h2{
   color:#fc5b62;
@@ -5589,7 +5713,7 @@ ul.rating{
   margin:0
 }
 .single__food__list .food__list__inner .food__list__details p span{
-  color:#f69324
+  color:#c43b95
 }
 .single__food__list .food__list__inner .food__rating{
   -webkit-flex-basis:20%;
@@ -6239,7 +6363,7 @@ ul.rating{
   padding:30px 30px 30px 40px;
   position:relative;
   z-index:2;
-  border-bottom:3px solid #f69324
+  border-bottom:3px solid #c43b95
 }
 .food_accordion .card-body::before{
   background-image:url(assets/images/icons/lg-shape/2.png);
@@ -7594,7 +7718,7 @@ ul.rating{
   transition:all .3s ease 0s
 }
 .cart__btn__list li a:hover{
-  background:#f69324;
+  background:#c43b95;
   color:#fff
 }
 .cartbox-total{
@@ -7650,7 +7774,7 @@ ul.rating{
   margin-top: 20px;
 }
 .food__dtl__prize li{
-  color:#f69324;
+  color:#c43b95;
   font-size:24px;
   font-weight:700;
   text-align: center;
@@ -7671,7 +7795,7 @@ ul.rating{
 }
 .cart-plus-minus input{
   border:1px dashed #959595;
-  color:#f69324;
+  color:#c43b95;
   font-size:18px;
   font-weight:700;
   height:45px;
@@ -7762,7 +7886,7 @@ ul.rating{
   text-align: center;
 }
 .menu__nav a.active,.menu__nav a:hover{
-  background:#f69324;
+  background:#c43b95;
   color:#fff
 }
 .single__dec__content{
@@ -8778,7 +8902,7 @@ input[type=submit]{
   overflow-wrap: break-word;
 }
 .order-details ul li p span{
-  color:#f69324
+  color:#c43b95
 }
 .order-details ul li p.strong{
   color:#303030;
@@ -8787,7 +8911,7 @@ input[type=submit]{
   font-size:13px
 }
 .order-details ul li p.strong span{
-  color:#f69324;
+  color:#c43b95;
   font-weight:400;
   text-transform:uppercase;
   font-size:13px
@@ -9292,7 +9416,7 @@ input[type=submit]{
   margin-bottom:0;
   transition:font 200ms ease-out;
   font-family:Montserrat-Light,sans-serif;
-  color:#f69324;
+  color:#c43b95;
   font-style:italic
 }
 #mainSlider #owl-main .caption h1.dark-bg,#mainSlider #owl-main .caption h1.light-bg,#mainSlider #owl-main .caption h1.medium-bg,#mainSlider #owl-main .caption h1.tint-bg{
@@ -9735,7 +9859,7 @@ input[type=submit]{
   font-family:Montserrat-Light,sans-serif
 }
 .feature-item-wrap h5 a:hover{
-  color:#f69324
+  color:#c43b95
 }
 .how-it-works-block .feature-item-wrap p{
   margin-bottom:0;
@@ -9759,7 +9883,7 @@ input[type=submit]{
 .section__title span em{
   width:60px;
   height:2px;
-  background-color:#f69324;
+  background-color:#c43b95;
   display:block;
   margin:auto
 }
@@ -9951,7 +10075,7 @@ input[type=submit]{
   background-color:#e5e2e2
 }
 .mm-listview a,.mm-listview a:hover,.mm-navbar a,.mm-navbar a:hover{
-  color:#f69324
+  color:#c43b95
 }
 .tab-wrap{
   float:left;
@@ -9987,7 +10111,7 @@ input[type=submit]{
   background-color:#ddd
 }
 .tab button.active,.tab1 button.active{
-  background-color:#f69324;
+  background-color:#c43b95;
   color:#fff
 }
 .tablinks img{
@@ -10005,18 +10129,22 @@ input[type=submit]{
   font-size:25px
 }
 .btn-details{
-  background:#f69324;
+  background:#c43b95;
   color:#fff;
   display:block;
   font-size:14px;
   font-weight:700;
   padding:6px 12px;
-  border-radius: 10px;
+  border-radius: 30px;
   -webkit-transition:.4s;
   -moz-transition:.4s;
   -ms-transition:.4s;
   -o-transition:.4s;
   transition:.4s;
+  font-family: Oswald-Bold;
+}
+.click-and-collect-btn{
+  font-size: 30px !important;
 }
 .btn-carte {
   /* color: #000; */
@@ -10024,8 +10152,8 @@ input[type=submit]{
 }
 .btn-details-edit{
   background:rgba(255,255,255,.6);
-  color:#f69324;
-  border:1px solid #f69324;
+  color:#c43b95;
+  border:1px solid #c43b95;
   display:block;
   font-size:10px;
   font-weight:700;
@@ -10041,7 +10169,7 @@ input[type=submit]{
   color:#fff
 }
 .btn-details:hover, .btn-details:focus {
-  background-color:#f69324;
+  background-color:#c43b95;
   color:#fff;
   border-radius:3px
 }
@@ -10054,10 +10182,10 @@ input[type=submit]{
 .btn-order-track{
   padding:4px 8px 4px 4px;
   background-color:transparent;
-  border:1px solid #f69324;
+  border:1px solid #c43b95;
   font-size:12px;
   font-weight:700;
-  color:#f69324
+  color:#c43b95
 }
 .btn-order-track i{
   font-size:9px;
@@ -10078,7 +10206,7 @@ ul.box_grid li{
   color:#e4e5e9
 }
 .mainmenu-footer li a:hover{
-  color:#f69324
+  color:#c43b95
 }
 #Div10,#Div12,#Div14,#Div2,#Div4,#Div6,#Div8,.display-mobile-block,.menu-mobile{
   display:none
@@ -10093,7 +10221,7 @@ ul.box_grid li{
   font-size:12px
 }
 .text-gap.active {
-  border: 1px solid #f69324;
+  border: 1px solid #c43b95;
 }
 .text-gap h2{
   color:#3d4152;
@@ -10123,7 +10251,7 @@ ul.box_grid li{
   display:inline-block
 }
 .text-gap i{
-  color:#f69324;
+  color:#c43b95;
   font-size:20px
 }
 .text-gap a{
@@ -10145,7 +10273,7 @@ ul.box_grid li{
   width:100%;
   padding:15px;
   margin:0;
-  background-color:#f69324
+  background-color:#c43b95
 }
 .inner-header h2{
   color:#fff;
@@ -10386,8 +10514,8 @@ ul.food-bootom{
   font-weight:700
 }
 .btn-link:hover{
-  border:1px solid #f69324;
-  background:#f69324;
+  border:1px solid #c43b95;
+  background:#c43b95;
   color:#fff;
   text-decoration:none;
   font-weight:700
@@ -10438,7 +10566,7 @@ ul.food-bootom{
 .total-price p{
   font-size:18px;
   font-weight:500;
-  color:#f69324;
+  color:#c43b95;
   line-height:1.333;
   z-index:334;
   padding:0;
@@ -10519,8 +10647,8 @@ ul.food-bootom{
   height:40px;
   width:auto;
   border-radius:3px;
-  background:#f69324;
-  border:1px solid #f69324;
+  background:#c43b95;
+  border:1px solid #c43b95;
   font-size:16px;
   color:#fff;
   font-weight:700;
@@ -10551,13 +10679,13 @@ ul.food-bootom{
 .promocode-btn{
   padding:0 30px;
   color:#fff;
-  background:#f69324;
+  background:#c43b95;
   font-size:14px;
   font-weight:400;
   border-radius:0 3px 3px 0;
   cursor:pointer;
   height:calc(40px);
-  border:1px solid #f69324
+  border:1px solid #c43b95
 }
 .signin-dialog{
   background:#fff;
@@ -10663,7 +10791,7 @@ span.line{
 span.active{
   height:5px;
   width:90px;
-  background-color: #f69324;
+  background-color: #c43b95;
   display:block;
   position:absolute;
 }
@@ -10677,7 +10805,7 @@ span.active{
   float:left;
 }
 .shipment .active{
-  background-color:#f69324
+  background-color:#c43b95
 }
 .content3 p{
   margin-left:-50%;
@@ -11165,7 +11293,7 @@ main{
   }
   .main-menu ul li span p{
     margin-bottom:10px;
-    color:#f69324
+    color:#c43b95
   }
   .main-menu ul li.nav-mobile{
     display:block
@@ -11287,7 +11415,7 @@ main{
     height:50px;
     display:block;
     padding:10px 0;
-    background-color:#f69324;
+    background-color:#c43b95;
     position:fixed;
     bottom:0;
     z-index:10000
@@ -11392,23 +11520,23 @@ p.delivers i{
   text-transform:uppercase
 }
 .btn-primary {
-  background-color: #f69324;
-  border-color: #f69324;
+  background-color: #c43b95;
+  border-color: #c43b95;
   color: #fff;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active {
-  background-color: #f69324;
-  border-color: #f69324;
+  background-color: #c43b95;
+  border-color: #c43b95;
   opacity: 0.8;
 }
 .btn-outline-primary {
   background-color: #fff;
-  border-color: #f69324;
+  border-color: #c43b95;
   color: #000;
 }
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active {
-  background-color: #f69324;
-  border-color: #f69324;
+  background-color: #c43b95;
+  border-color: #c43b95;
   color: #fff;
 }
 .field-icon{
@@ -11939,11 +12067,11 @@ p.delivers i{
   display:none
 }
 .image-checkbox-checked{
-  border-color:#f69324
+  border-color:#c43b95
 }
 .image-checkbox .fa{
   position:absolute;
-  color:#f69324;
+  color:#c43b95;
   background-color:#fff;
   padding:10px;
   top:2px;
@@ -11960,12 +12088,12 @@ p.delivers i{
   color:#959595
 }
 .collapse-btn:hover{
-  background-color:#f69324;
-  border-color:#f69324
+  background-color:#c43b95;
+  border-color:#c43b95
 }
 .collapse-btn:focus{
   background-color:#fff;
-  border-color:#f69324;
+  border-color:#c43b95;
   border-width:1px
 }
 
@@ -11992,7 +12120,7 @@ p.delivers i{
 }
 .sidenav a:not(.btn-favorite):hover {
   background: #f8fbff;
-  color: #f69324;
+  color: #c43b95;
 }
 .sidenav .closebtn {
   position: absolute;
@@ -12208,7 +12336,7 @@ a.disabled {
   left: 20px;
   font-size: 20px;
   text-transform: capitalize;
-  color: #f69324;
+  color: #c43b95;
 }
 .category-item:hover {
   cursor: pointer;
@@ -12261,7 +12389,7 @@ ul.nav.top-carte-menu li.nav-item > a {
   font-weight: bold;
 }
 ul.nav.top-carte-menu li.nav-item > a.active {
-  color: #f69324;
+  color: #c43b95;
   border-bottom: 1px solid;
 }
 .inner-header h3 {
@@ -12381,14 +12509,14 @@ ul.nav.top-carte-menu li.nav-item > a.active {
   bottom: 0;
 }
 .carousel-indicators li {
-  background-color: #f69324;
+  background-color: #c43b95;
   cursor: pointer;
 }
 .carousel-indicators .active {
   background-color: #000;
 }
 .carousel-multi-item .controls-top{text-align:center}
-.carousel-multi-item .controls-top .btn-floating{background:#f69324}
+.carousel-multi-item .controls-top .btn-floating{background:#c43b95}
 .btn-floating {
   box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
   width: 47px;
@@ -12508,7 +12636,7 @@ a.waves-effect, a.waves-light {
 }
 
 .title-block {
-  color: #f69324;
+  color: #c43b95;
   background: #f4f5f5;
   padding: 15px 0;
   margin-bottom: 15px;
@@ -12618,5 +12746,5 @@ button.close:focus {
 }
 
 .text-theme-color {
-  color: #f69324!important;
+  color: #c43b95!important;
 }

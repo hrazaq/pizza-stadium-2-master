@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GlobalConsts } from 'src/app/utils/global-consts';
 import { ApiService } from 'src/app/api.service';
 import { Resaurant } from 'src/app/models/restaurant';
+import CircleType from 'circletype';
 
 @Component({
   selector: 'app-slider',
@@ -23,6 +24,8 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRestaurantOrderModes();
+    const circleType = new CircleType(document.getElementById('text_cercle'));
+    circleType.radius(250);
   }
 
   set cmdMode(cmdMode) {
