@@ -1,0 +1,7 @@
+.btn-cmd-mode .btn {
+    color: black;
+}
+.btn-cmd-mode .btn.selected {
+    background-color: black;
+    color: white;
+}

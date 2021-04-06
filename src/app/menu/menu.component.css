@@ -1,0 +1,28 @@
+.inner-header.p-1 {
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+.inner-header.affix {
+    top: 90px;
+}
+@media screen and (max-width: 767px){
+    .inner-header.affix {
+        top: 0;
+    }
+}
+@media screen and (min-width: 992px){
+    .nav-link {
+        padding: 1rem 2rem;
+    }
+    ul.nav.top-carte-menu {
+        width: calc(100% - 240px);
+    }
+}
+
+.w--280 {
+    width: 270px;
+}
+
+.top-affix.affix {
+    border-bottom: 1px solid #efefef;
+}

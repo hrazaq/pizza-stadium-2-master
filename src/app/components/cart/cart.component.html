@@ -1,0 +1,46 @@
+<ul (click)="$event.stopPropagation()">
+    <li class="text-center" *ngIf="cartList.length==0">Votre panier est vide!</li>
+    <li *ngFor="let item of cartList">
+        <span class="item d-flex">
+            <span class="item-left flex-grow-1 d-flex">
+                <img src="{{asset_url}}/menu/{{item.menu.picture}}" *ngIf="item.menu.picture" alt="" class="flex-grow- img-fluid w--100-x2 mr-3 mb-3" />
+                <img src="assets/images/default-pro.png" *ngIf="!item.menu.picture" alt="" class="flex-grow-1 img-fluid w--100-x2 mr-3 mb-3" />
+                <span class="item-info flex-grow-1">
+                    <span>{{item.menu.name}}</span>
+                    <div class="input-group mt-1 mb-1" style="width: auto;">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]" (click)="decrement(item)" [disabled]="item.qty==1">
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                        <span class="qty">{{item.qty}}</span>
+                        <!-- <input type="text" name="quant[1]" class="form-control input-number" value="{{item.qty}}" min="1" max="10" style="max-width: 32px; padding: 0px; text-align: center;"> -->
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]" (click)="increment(item)">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <span>prix: {{item.menu.price | currency:'EUR'}} <small>{{numberSupp(item)}}</small></span>
+                </span>
+            </span>
+            <span class="item-right text-right">
+                <!-- <button (click)="removeItem(item)" class="btn btn-danger fa fa-close"></button> -->
+                <a href="javascript:void()" (click)="removeItem(item)" class="text-secondary fa fa-trash fa-2x mr-3"></a>
+            </span>
+        </span>
+    </li>             
+    <li class="divider"></li>
+</ul>
+<!-- <div class="cartbox__buttons fix-bottom" *ngIf="cartList.length>0">
+    <div class="cartbox__total" (click)="$event.stopPropagation()">
+        <ul>
+           <li><span class="cartbox__total__title">Sous-total</span><span class="price">{{calcTotal() | currency:'EUR'}}</span></li>
+           <li class="grandtotal">Total<span class="price">{{calcTotal() | currency:'EUR'}}</span></li>
+        </ul>
+     </div>
+    <a class="food__btn mt-2" routerLink="/checkout" (click)="hide()"><span>Valider</span></a>
+</div> -->
+<!-- <div class="cartbox__buttons fix-bottom" *ngIf="cartList.length==0">
+    <a class="food__btn mt-2" routerLink="/categories"><span>Découvrez Notre Carte</span></a>
+</div> -->

@@ -1,0 +1,35 @@
+<!-- <section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 p-0 d-block d-sm-none"></div>
+            <div class="col-6 p-0 d-none d-sm-block">
+                <h3>La carte</h3>
+            </div>
+            <div class="col-6 p-0">
+                <app-search-form></app-search-form>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section id="categories" class="fullscreen jml-height"> <!-- bg-image--7 -->
+
+    <div class="container pt--60 pb--50">
+        <div class="row">
+
+            <div class="col-md-4" *ngFor="let fam of FamilyList" (click)="goToMenu(fam)" title="Livraison {{fam.name}}">
+                <div class="category-item" [style]="{'background-image': 'url('+asset_url+'/uploads/caticons/'+fam.icon+')'}">
+                    <span>{{fam.name}}</span>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-4" *ngFor="let fam of MenuFamilyList" (click)="goToMenu(fam, 'm')" title="Livraison {{fam.name}}">
+                <div class="category-item" [style]="{'background-image': 'url('+asset_url+'/uploads/caticons/'+fam.icon+')'}">
+                    <span>{{fam.name}}</span>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+</section>

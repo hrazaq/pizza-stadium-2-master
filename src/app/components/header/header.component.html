@@ -1,0 +1,87 @@
+<header class="htc__header bg--black">
+    <!-- Start Mainmenu Area -->
+    <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header" [class.no_sticky]="no_sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-5 pr-0">
+                    <span (click)="nav_open = 1" class="fa fa-bars fa-2x c-pointer nav-sm-btn"></span>
+                    <a routerLink="categories" class="btn-details btn-carte gap-reduce-p d-inline-block text-uppercase fix-pos">La Carte</a>
+                    <!-- <span (click)="openSearch()" class="fa fa-search fa-2x c-pointer nav-sm-btn"></span> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-2 header-margin">
+                    <div class="logo">
+                        <a routerLink="/">
+                            <img src="assets/images/logo.png" alt="Livaison à domicile" class="img-fluid center-block d-none d-lg-block">
+                            <img src="assets/images/logo-m.png" alt="Lvraison à domicile" class="img-fluid center-block d-block d-lg-none">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-5 pl-0">
+                    <div class="header__right d-flex justify-content-end">
+                        <div class="log__in">
+                            <a class="accountbox-trigger" routerLink="/account" *ngIf="user.id"><i class="fa fa-user"></i></a>
+                            <a class="accountbox-trigger" routerLink="/login" *ngIf="!user.id"><i class="fa fa-user"></i></a>
+                        </div>
+                        <!-- <div class="shopping__cart" ng-click="cartboxToggler();">
+                            <a class="minicart-trigger" href="javascript:void(0)"><i class="fa fa-shopping-cart"></i></a>
+                            <div class="shop__qun" ng-show="cartCount > 0">
+                                <span>{{cartCount}}</span>
+                            </div>
+                        </div> -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown shopping__cart">
+                                <a href="javascript:void(0)" (click)="cart_open=1">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="shop__qun" *ngIf="cartList.length>0">
+                                        <span>{{cartList.length}}</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- <li class="dropdown shopping__cart">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <div class="shop__qun" *ngIf="cartList.length>0">
+                                        <span>{{cartList.length}}</span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-cart" role="menu">
+                                    <app-cart></app-cart>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <!-- <div class="mobile-menu" [class.is-visible]="nav_open">
+                <div class="body-overlay" (click)="nav_open = 0"></div>
+                <div id="mySidenav" class="sidenav" [style.width]="nav_open?'250px':''">
+                    <a href="javascript:void(0)" class="closebtn" (click)="nav_open = 0">&times;</a>
+                    <a routerLink="/" (click)="nav_open = 0"><i class="fa fa-home"></i> Accueil</a>
+                    <a routerLink="/categories" (click)="nav_open = 0"><i class="fa fa-cutlery"></i> Menu</a>
+                    <a routerLink="/account" (click)="nav_open = 0" *ngIf="user.id"><i class="fa fa-user"></i> Compte</a>
+                    <a routerLink="/login" (click)="nav_open = 0" *ngIf="!user.id"><i class="fa fa-user"></i> Se connecter</a>
+                    <a routerLink="/account" [queryParams]="{ tab: 'favorites' }" (click)="nav_open = 0" *ngIf="user.id"><i class="fa fa-heart"></i> Favoris</a>
+                    <a routerLink="/contact" (click)="nav_open = 0"><i class="fa fa-map-marker"></i> Contactez-nous</a>
+                </div>
+            </div> -->
+            <!-- Mobile Menu -->
+            
+        </div>
+    </div>
+    <!-- End Mainmenu Area -->
+</header>
+
+<section class="inner-header" *ngIf="search_open && !search_force_close">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-6 p-0 d-block d-sm-none"></div> -->
+            <div class="col-12 p-0">
+                <app-search-form></app-search-form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-popup-cart [(cart_open)]="cart_open"></app-popup-cart>

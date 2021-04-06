@@ -1,0 +1,19 @@
+.product-card-v2 .product-details {
+    flex-grow: 1;
+}
+.product-card-v2 .product-details h3 {
+    font-family:AwesomeJourney,Montserrat,sans-serif;
+    font-weight: 400;
+}
+.product-card-v2 .product-details p, .product-card-v2 .product-details span {
+    font-family:NexaLight,Montserrat,sans-serif;
+}
+.product-card-v2 .product-img {
+    flex-grow: 1;
+    max-width: 120px;
+    max-height: 120px;
+    text-align: center;
+}
+.product-card-v2 .product-img img {
+    max-height: 120px;
+}

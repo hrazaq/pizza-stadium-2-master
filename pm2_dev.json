@@ -1,0 +1,15 @@
+{
+	"apps": [
+		{
+			"name": "Pizza-Stadium",
+			"cwd": "/var/www/pizza-stadium.fr/html/pizza-stadium/",
+			"script": "runDev.sh",
+			"error_file": "dev.log",
+			"out_file": "dev.log",
+			"merge_logs": true,
+			"env": {
+				"NODE_ENV": "developement"
+			}
+		}
+	]
+}

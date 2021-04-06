@@ -1,0 +1,222 @@
+<section class="inner-header">
+    <div class="container">
+        <div class="row notouch">
+            <div class="col-md-6">
+                <h3><a routerLink="/categories"><i class="fa fa-chevron-left"></i></a> {{selectedMenuFamily ? selectedMenuFamily.name : (selectedFamily?selectedFamily.name:'TOUS')}}</h3>
+            </div>
+            <!-- <div class="col-md-6">
+                <h3 class="pull-right" *ngIf="!keyword"><a href="javascript:void(0)" (click)="show_filter=!show_filter"><i class="fa fa-sliders"></i></a></h3>
+                <app-search-form></app-search-form>
+            </div> -->
+            <div class="col-md-6">
+                <h3 class="pull-right"><a href="javascript:void(0)" (click)="show_filter=!show_filter"><i class="fa fa-sliders"></i></a></h3>
+                <div class="search-transparent pull-right">
+                    <input type="text" class="input-search" placeholder="Que recherchez-vous ?" autofocus autocomplete="off" [(ngModel)]="keyword" (keyup)="search()">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="food__category__area" id="food">
+    <div class="container">
+        
+        <div class="row" *ngIf="filter">
+            <div class="col-md-12 col-lg-12">
+                <div class="section__title service__align--center">
+                    <ul class="nav top-carte-menu">
+                        <li class="nav-item"><a [ngClass]="{'nav-link': true, 'active': !selectedFamily}" href="javascript:void(0)" title="Livraison" (click)="openFamily(null)">TOUS</a></li>
+                        <li class="nav-item" *ngFor="let fam of FamilyList">
+                            <a [ngClass]="{'nav-link': true, 'active': selectedFamily&&fam.id===selectedFamily.id}" href="javascript:void(0)" title="Livraison {{fam.name}}" (click)="openFamily(fam)">{{fam.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="food__category__wrapper mt--40">
+            <div class="row">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="wow fadeIn" style="width:100%; float: left;">
+                        <!-- HIDE -->
+                        <div class="tab-wrap" style="display: none;">
+                            <div class="menu__descrive__area">
+                                
+                                <!-- Products / Menus tabs -->
+                                <div class="menu__nav nav nav-tabs" role="tablist">
+                                    <a [class.active]="activatedType=='p'" id="nav-all-tab" data-toggle="tab" href="javascript:void(0)" data-target="#nav-all" role="tab" aria-selected="true" (click)="openProductsTab();">Produits</a>
+                                    <a [class.active]="activatedType=='m'" id="nav-breakfast-tab" data-toggle="tab" href="javascript:void(0)" data-target="#nav-breakfast" role="tab" class="" aria-selected="false" (click)="openMenusTab();">Menus</a>
+                                </div>
+                                
+                                <div class="menu__tab__content tab-content" id="nav-tabContent">
+                                    
+                                    <!-- Products categories -->
+                                    <div class="single__dec__content fade" [class]="activatedType=='p'?'active show':''" id="nav-all" role="tabpanel">
+                                        <div class="tab">
+                                            
+                                            <span *ngFor="let fam of FamilyList">
+                                                <button [ngClass]="{'tablinks': true, 'active': selectedFamily&&fam.id===selectedFamily.id}" title="Livraison {{fam.name}}" (click)="openFamily(fam)" id="defaultOpen{{fam.id}}">
+                                                    <img src="{{asset_url}}/uploads/caticons/{{fam.icon}}" width="30" height="30" alt="Livraison {{fam.name}}" class="img-fit" /><span>{{fam.name}}</span>
+                                                </button>
+                                            </span>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Menus categories -->
+                                    <div class="single__dec__content fade" [class]="activatedType=='m'?'active show':''" id="nav-breakfast" role="tabpanel">
+                                        <div class="tab">
+                                            <span *ngFor="let fam of MenuFamilyList">
+                                                <button [ngClass]="{'tablinks': true, 'active': selectedMenuFamily&&fam.id===selectedMenuFamily.id}" title="Livraison {{fam.name}}" (click)="openMenuFamily(fam)" id="defaultOpen1{{fam.id}}">
+                                                    <img src="{{asset_url}}/uploads/caticons/{{fam.icon}}" width="30" height="30" alt="Livraison {{fam.name}}" class="img-fit" /><span>{{fam.name}}</span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- HIDE -->
+                        
+                        <span class="MenuList" *ngIf="selectedFamily && !keyword">
+                            <div id="menuCat{{selectedFamily.id}}"><!-- class="tabcontent" -->
+                                <div class="row justify-content-center">
+                                    
+                                    <app-product-card class="col-lg-4 col-md-6 col-auto d-flex align-items-stretch" [family_name]="selectedFamily.name" [menu]="menu" *ngFor="let menu of selectedFamily.menu_list"></app-product-card>
+                                    
+                                </div>
+                            </div>
+                        </span>
+                        
+                        <span class="MenuFamilyList" *ngIf="selectedMenuFamily && !keyword">
+                            <div id="menuCat1{{selectedMenuFamily.id}}" class="tabcontent" >
+                                <div class="row justify-content-center">
+                                    
+                                    <div class="col-lg-4 col-md-6 col-auto d-flex align-items-stretch" *ngFor="let menu of selectedMenuFamily.menu_list; let im = index">
+                                        <div class="menu__grid__item" style="visibility: visible; animation-name: fadeInLeft;">
+                                            <div class="menu__grid__thumb">
+                                                <a href="javascript:void(0)" class="btn-favorite" (click)="addToFavorite($event, menu.id, 1)"><i class="fa fa-heart-o text-danger"></i></a>
+                                                <a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedMenuFamily.name}} {{menu.name}}">
+                                                    <div class="short-details">
+                                                        <h5>{{menu.name}}</h5>
+                                                    </div>
+                                                    <img src="assets/images/default-pro.png" *ngIf="menu.picture==''" class="img-fluid" alt="Livraison {{selectedMenuFamily.name}} {{menu.name}}" title="Livraison {{selectedMenuFamily.name}} {{menu.name}}">
+                                                    <img src="{{asset_url}}/menu/{{menu.picture}}" *ngIf="menu.picture!=''" class="img-fluid" alt="Livraison {{selectedMenuFamily.name}} {{menu.name}}" title="Livraison {{selectedMenuFamily.name}} {{menu.name}}" error="this.src='assets/images/default-pro.png'">
+                                                </a>
+                                            </div>
+                                            <div class="menu__grid__inner">
+                                                <div class="menu__grid__details">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h2><a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedMenuFamily?selectedMenuFamily.name:''}} {{menu.name}}">{{menu.name}}</a></h2>
+                                                            <ul class="grid__prize__list pull-right"><li>{{menu.ngPrice||menu.priceArr2[selectdPrice].price | currency:'EUR'}}</li></ul>
+                                                            <!--   <p>{{menu.description.substring(0,50)}}..</p> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <span class="product-size pull-left" *ngIf="menu.priceArr2.length>0">
+                                                                <select class="drop" [(ngModel)]="menu.ngPrice">
+                                                                    <option [value]="undefined" disabled>{{menu.priceArr2[0].name}}</option>
+                                                                    <option *ngFor="let opt of menu.priceArr | keyvalue" [value]="opt.value">{{opt.key}}</option><!-- [selected]="opt.selected == true" -->
+                                                                </select>
+                                                                <input type="hidden" name="PriceValue" id="PriceValue{{menu.id}}" value="{{menu.priceArr2[selectdPrice].price}}">
+                                                                <input type="hidden" name="PriceName" id="PriceName{{menu.id}}" value="{{menu.priceArr2[selectdPrice].name}}">
+                                                            </span>
+                                                            <span class="pull-right" *ngIf="menu.personalizable=='Y'"><a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedMenuFamily?selectedMenuFamily.name:''}} {{menu.name}}" class="btn-details gap-reduce-p">Ajouter</a></span>
+                                                            <div class="pull-right" *ngIf="menu.personalizable!='Y'">
+                                                                <a href="javascript:void(0)" (click)="addToCart(menu)" *ngIf="setQty.menu_id != menu.id" title="Livraison {{selectedMenuFamily?selectedMenuFamily.name:''}} {{menu.name}}" class="btn-details gap-reduce-p">Ajouter</a>
+                                                                <div class="product-quantity-2" *ngIf="setQty.menu_id == menu.id">
+                                                                    <div class="cart-plus-minus">
+                                                                        <input class="cart-plus-minus-box" name="qtybutton" value="{{cart.qty}}" type="text" readonly="true" ng-model="cart.qty">
+                                                                        <div class="dec qtybutton" (click)="decrement(setQty.cart_index)">-</div>
+                                                                        <div class="inc qtybutton" (click)="increment(setQty.cart_index)">+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </span>
+
+                        <span class="MenuList" *ngIf="filteredProductList && (!selectedFamily || keyword)">
+                            <div><!-- class="tabcontent" -->
+                                <div class="row justify-content-center">
+
+                                    <app-product-card class="col-lg-4 col-md-6 col-auto d-flex align-items-stretch" [family_name]="menu.family" [menu]="menu" *ngFor="let menu of filteredProductList"></app-product-card>
+                                    
+                                    <!-- <div class="col-lg-4 col-sm-6 col-xs-6 col-md-6 foodbox-width" *ngFor="let menu of filteredProductList; let im = index">
+                                        <div class="menu__grid__item" style="visibility: visible; animation-name: fadeInLeft;">
+                                            <div class="menu__grid__thumb">
+                                                <a href="javascript:void(0)" class="btn-favorite" (click)="addToFavorite($event, menu.id, 1)"><i class="fa fa-heart-o text-danger"></i></a>
+                                                <a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}">
+                                                    <div class="short-details">
+                                                        <h5>{{menu.name}}</h5>
+                                                    </div>
+                                                    <img src="assets/images/default-pro.png" *ngIf="menu.picture==''" class="img-fluid" alt="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}">
+                                                    <img src="{{asset_url}}/menu/{{menu.picture}}" *ngIf="menu.picture!=''" class="img-fluid" alt="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}" error="this.src='assets/images/default-pro.png'">
+                                                </a>
+                                            </div>
+                                            <div class="menu__grid__inner">
+                                                <div class="menu__grid__details">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h2><a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}">{{menu.name}}</a></h2>
+                                                            <ul class="grid__prize__list pull-right"><li>{{menu.ngPrice||menu.priceArr2[selectdPrice].price | currency:'EUR'}}</li></ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <span class="product-size pull-left" *ngIf="menu.priceArr2.length>0">
+                                                                <select class="drop" [(ngModel)]="menu.ngPrice">
+                                                                    <option [value]="undefined" disabled>{{menu.priceArr2[0].name}}</option>
+                                                                    <option *ngFor="let opt of menu.priceArr | keyvalue" [value]="opt.value">{{opt.key}}</option>
+                                                                </select>
+                                                                <input type="hidden" name="PriceValue" id="PriceValue{{menu.id}}" value="{{menu.priceArr2[selectdPrice].price}}">
+                                                                <input type="hidden" name="PriceName" id="PriceName{{menu.id}}" value="{{menu.priceArr2[selectdPrice].name}}">
+                                                            </span>
+                                                            <span class="pull-right" *ngIf="menu.personalizable=='Y'"><a routerLink="/menu/{{menu.family}}/{{menu.alias}}" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}" class="btn-details gap-reduce-p">Ajouter</a></span>
+                                                            <div class="pull-right" *ngIf="menu.personalizable!='Y'">
+                                                                <a href="javascript:void(0)" (click)="addToCart(menu)" *ngIf="setQty.menu_id != menu.id" title="Livraison {{selectedFamily?selectedFamily.name:''}} {{menu.name}}" class="btn-details gap-reduce-p">Ajouter</a>
+                                                                <div class="product-quantity-2" *ngIf="setQty.menu_id == menu.id">
+                                                                    <div class="cart-plus-minus">
+                                                                        <input class="cart-plus-minus-box" name="qtybutton" value="{{cart.qty}}" type="text" readonly="true" ng-model="cart.qty">
+                                                                        <div class="dec qtybutton" (click)="decrement(setQty.cart_index)">-</div>
+                                                                        <div class="inc qtybutton" (click)="increment(setQty.cart_index)">+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-12 text-center" *ngIf="filteredProductList.length==0">
+                                        <h1>Aucun produit trouvé!</h1>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-cart-mobile></app-cart-mobile>

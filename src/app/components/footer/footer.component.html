@@ -1,0 +1,50 @@
+<footer class="footer__area footer--1">
+   <div class="copyright bg--black py-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="copyright__inner">   
+                  <div class="cpy__right--left">
+                     <p>
+                        <a routerLink="/contact" title="Livraison à domicile {{address}}">{{appName}}</a><br>
+                        <!-- <a routerLink="/recrutement">Recrutement</a> | -->
+                        <a routerLink="/zones-de-livraison" title="Livraison à domicile {{address}}">{{address}}</a><br>
+                        <!-- <a href="tel:{{phone}}" title="Livraison à domicile {{address}}">{{phone}}</a><br> -->
+                        <a href="mailto:{{email}}" title="Livraison à domicile {{address}}">{{email}}</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="text-center">
+                  <img src="assets/images/logo-green.png" alt="Livaison à domicile" class="img-fluid center-block" style="width: 140px;">
+               </div>
+               
+               <div class="copyright__inner">   
+                  <div class="cpy__right--left">
+                     <p class="text-muted">&copy; Tous droits réservés | Fait avec <i class="fa fa-heart" aria-hidden="true"></i> par <a href="https://www.frenchweb.ma" target="_blank">French Web</a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4 text-center">
+               <ul class="social-icons mb-3">
+                  <li *ngIf="social.facebook"><a href="{{social.facebook}}" target="_blank" title="Contact Restaurant Livraison"><i class="fa fa-facebook"></i></a></li>
+                  <li *ngIf="social.instagram"><a href="{{social.instagram}}" target="_blank" title="Contact Restaurant Livraison"><i class="fa fa-instagram"></i></a></li>
+                  <li *ngIf="social.twitter"><a href="{{social.twitter}}" target="_blank" title="Contact Restaurant Livraison"><i class="fa fa-twitter"></i></a></li>
+                  <li *ngIf="social.youtube"><a href="{{social.youtube}}" target="_blank" title="Contact Restaurant Livraison"><i class="fa fa-youtube-play"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <a routerLink="/contact" class="btn btn-primary btn-map"><i class="fa fa-map-marker"></i> Nous trouver sur la carte</a>
+   </div>
+</footer>
+<!-- text-decoration:none;font-size: 10px; font-family: Verdana; font-weight: normal; -->
+<div class="d-none">
+   <div> 
+      <a *ngFor="let item of zones" href="livraison-{{mainFood}}-{{city}}-{{item.city|slugify}}-{{item.pincode}}" class="small text-decoration-none" title="Commander {{mainFood}} à {{city}} {{item.city}} {{item.pincode}}">Commander {{mainFood}} à {{city}} {{item.city}} {{item.pincode}} | </a>
+   </div>
+   <div>
+      <a *ngFor="let item of zones" href="restaurant/livraison-{{mainFood}}-{{city}}-{{item.city|slugify}}-{{item.pincode}}" class="small text-decoration-none" title="{{mainFood}} à {{city}} {{item.city}} {{item.pincode}}">{{mainFood}} à {{city}} {{item.city}} {{item.pincode}} | </a>
+   </div>
+</div>

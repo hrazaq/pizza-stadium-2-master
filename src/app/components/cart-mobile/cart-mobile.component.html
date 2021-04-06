@@ -1,0 +1,16 @@
+<section class="cart-mobile hide-desktop dropdown" *ngIf="cartList.length>0">
+    <!-- <div class="dropdown-menu dropdown-cart" role="menu">
+        <app-cart></app-cart>
+    </div>
+    <a href="#" class="food__btn btn-block text-center mt-2" data-toggle="dropdown" role="button" aria-expanded="false">
+        <span class="pull-left"><span class="label label-default">{{cartList.length}}</span></span>
+        <span>Voir panier</span>
+        <span class="pull-right">{{calcTotal() | currency:'EUR'}}</span>
+    </a> -->
+    <app-popup-cart [(cart_open)]="cart_open"></app-popup-cart>
+    <button class="food__btn btn-block text-center mt-2" (click)="cart_open=1">
+        <span class="pull-left"><span class="label label-default">{{cartList.length}}</span></span>
+        <span>Voir panier</span>
+        <span class="pull-right">{{calcTotal() | currency:'EUR'}}</span>
+    </button>
+</section>

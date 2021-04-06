@@ -1,0 +1,24 @@
+<div class="mobile-menu fade" [class.show]="cart_open" [class.is-visible]="cart_open" *ngIf="cart_open">
+    <div class="body-overlay" (click)="hide()"></div>
+    <div class="card sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="hide()">&times;</a>
+        <div class="card-body border-top">
+            <app-cart></app-cart> <!-- (cart_openChange)="parentEventHandlerFunction($event)" -->
+            
+            <div class="cartbox__buttons fix-bottom" *ngIf="cartList.length>0">
+                <div class="cartbox__total" (click)="$event.stopPropagation()">
+                    <ul>
+                       <li><span class="cartbox__total__title">Sous-total</span><span class="price">{{calcTotal() | currency:'EUR'}}</span></li>
+                       <!-- <li class="shipping-charge"><span class="cartbox__total__title">Frais de livraison</span><span class="price">${{DeliveryCharge | currency:'EUR'}}</span></li> -->
+                       <li class="grandtotal">Total<span class="price">{{calcTotal() | currency:'EUR'}}</span></li>
+                    </ul>
+                 </div>
+                <a class="food__btn mt-2" routerLink="/checkout" (click)="hide()"><span>Valider</span></a>
+            </div>
+
+            <div class="cartbox__buttons fix-bottom" *ngIf="cartList.length==0">
+                <a class="food__btn mt-2" routerLink="/categories" (click)="hide()"><span>Découvrez Notre Carte</span></a>
+            </div>
+        </div>
+    </div>
+</div>

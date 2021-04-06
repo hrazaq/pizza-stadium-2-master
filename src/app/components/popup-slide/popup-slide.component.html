@@ -1,0 +1,10 @@
+<div class="mobile-menu fade" [class.show]="nav_open" [class.is-visible]="nav_open" *ngIf="nav_open">
+    <div class="body-overlay" (click)="hide()"></div>
+    <div class="card sidenav">
+        <h3 class="pos-abs-center">{{ menu.name }}</h3>
+        <a href="javascript:void(0)" class="closebtn" (click)="hide()">&times;</a>
+        <div class="card-body border-top">
+            <app-menu-details-v2 [alias]="menu.alias" [(nav_open)]="nav_open"></app-menu-details-v2>
+        </div>
+    </div>
+</div>

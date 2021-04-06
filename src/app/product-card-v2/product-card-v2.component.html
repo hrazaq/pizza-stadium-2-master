@@ -1,0 +1,11 @@
+<div class="product-card-v2 shadow-sm shadow-sm-top w-100 p-3 mb-3 m-m-0 bg-white cursor d-flex" [ngClass]="shadow" (mouseover)="shadow='shadow'" (mouseout)="shadow='shadow-sm'">
+    <div class="product-details">
+        <h3>{{menu.name}}</h3>
+        <p class="text-ellipsis text-muted" *ngIf="menu.description">{{menu.description}}</p>
+        <p class="text-ellipsis text-muted" *ngIf="!menu.description && menu.composition">{{menu.composition.join(', ')}}</p>
+        <span class="font-20">{{menu.priceArr2[selectdPrice].price | currency:'EUR'}}</span>
+    </div>
+    <div class="product-img">
+        <img [src]="asset_url+'/menu/'+menu.picture" alt="Livraison {{family_name}} {{city}} {{menu.name}}" title="Livraison {{zone}} {{city}} {{family_name}} {{menu.name}}" class="img-fluid" onerror="this.src='assets/images/default-pro.png'" *ngIf="menu.picture">
+    </div>
+</div>

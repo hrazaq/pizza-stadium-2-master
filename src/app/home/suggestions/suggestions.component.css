@@ -1,0 +1,22 @@
+.carousel .controls-top {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+}
+
+.carousel .controls-top .btn-floating[data-slide=prev] {
+    position: absolute;
+    left: -35px;
+}
+.carousel .controls-top .btn-floating[data-slide=next] {
+    position: absolute;
+    right: -35px;
+}
+@media screen and (max-width: 767px){
+    .carousel .controls-top .btn-floating[data-slide=prev] {
+        left: -15px;
+    }
+    .carousel .controls-top .btn-floating[data-slide=next] {
+        right: -15px;
+    }
+}

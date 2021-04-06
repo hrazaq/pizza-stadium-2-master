@@ -1,0 +1,4 @@
+<form [formGroup]="searchForm" (ngSubmit)="search(searchForm.value)" class="search-transparent pull-right">
+    <input type="text" class="input-search" placeholder="Que recherchez-vous ?" autofocus autocomplete="off" formControlName="keyword">
+    <button type="submit" class="btn bg-transparent"><i class="fa fa-search cursor"></i></button>
+</form>

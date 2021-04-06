@@ -1,0 +1,9 @@
+.option-block {
+    margin-top: 10px;
+}
+.option-block label {
+    position: relative;
+}
+.option-block span {
+    float: right;
+}

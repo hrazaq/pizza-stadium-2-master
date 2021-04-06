@@ -1,0 +1,19 @@
+<section id="section1" class="offer py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <!-- <ng-container *ngFor="let fam of FamilyList">
+                <app-product-card class="col-lg-4 col-md-6 col-auto d-flex align-items-stretch" [family_name]="fam.name" [menu]="menu" *ngFor="let menu of fam.menu_list"></app-product-card>
+            </ng-container> -->
+            <app-product-card class="col-lg-4 col-md-6 col-auto d-flex align-items-stretch" [city]="city" [zone]="zone"
+            [family_name]="menu.family" [menu]="menu" *ngFor="let menu of productList.slice(0, 9)" (click)="showPopup(menu)"></app-product-card>
+            
+            <div class="col-auto mt-3">
+                <a routerLink="/categories" class="btn btn-primary text-uppercase">Voir toute la carte</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<app-popup-slide [(nav_open)]="nav_open" [menu]="selectedProduct"></app-popup-slide>
