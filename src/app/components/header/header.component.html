@@ -12,17 +12,18 @@
                         <div class="log__in">
                             <a class="accountbox-trigger" routerLink="/account" *ngIf="user.id">
                                 <img src="assets/icons/user.svg" width="30" height="30">
+                                <p>S'incrire/Se connecter</p>
                             </a>
                             <a class="accountbox-trigger" routerLink="/login" *ngIf="!user.id">
                                 <img src="assets/icons/user.svg" width="30" height="30">
+                                <p>S'incrire/Se connecter</p>
                             </a>
-                            <h6>S'incrire/Se connecter</h6>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown shopping__cart">
-                                <a href="javascript:void(0)" (click)="cart_open=1">
+                                <a href="javascript:void(0)" (click)="cart_open=1" class="panier_box">
                                     <img src="assets/icons/shopping-bag.svg" width="30" height="30">
-                                    <h6>Panier</h6>
+                                    <p>Panier</p>
                                     <div class="shop__qun" *ngIf="cartList.length>0">
                                         <span>{{cartList.length}}</span>
                                     </div>

@@ -1700,6 +1700,21 @@ a#scrollUp:hover{
     width: 70px;
   }
 }
+.log__in .accountbox-trigger img{
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.log__in .accountbox-trigger p{
+  font-size: 15px;
+  color: #fff !important;
+  font-family: Oswald-Regular;
+}
+.panier_box p{
+  font-size: 15px;
+  color: #fff !important;
+  font-family: Oswald-Regular;
+  margin-left: 10px;
+}
 .log__in a,.shopping__cart a{
   -webkit-box-align:center;
   -ms-flex-align:center;
