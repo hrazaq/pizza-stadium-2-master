@@ -12460,7 +12460,12 @@ ul.nav.top-carte-menu li.nav-item > a.active {
 .single-service h4 {
   color: #000;
   font-weight: 700;
+  font-family: Oswald-Bold;
   text-transform: uppercase;
+}
+.single-service p {
+  font-family: Oswald-Light;
+  font-size: 20px;
 }
 .single-service img {
   max-width: 130px;
@@ -12474,6 +12479,97 @@ ul.nav.top-carte-menu li.nav-item > a.active {
 }
 .bg-offer-2 {
   background-image: url(assets/images/banner/offer-2.jpg);
+}
+.bg-offer-3 {
+  background-color: #000;
+  display: flex;
+  text-align: center;
+}
+.bg-offer-3 p {
+  color: white;
+  font-size: 40px;
+  margin: auto;
+}
+.bg-offer-3 .img_wok {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-left: -45px;
+  margin-bottom: -20px;
+}
+.bg-offer-3 .img_grace {
+  position: relative;
+  z-index: 2;
+  top: -40%;
+  left: -20%;
+  transform: rotate(40deg);
+}
+.bg-offer-3 .imgs{
+  margin-right: -13%;
+}
+.bg-offer-3 .text{
+  margin-left: -130px;
+  margin-top: -30px;
+}
+.bg-offer-3 .text .top_text .text_1{
+  color: #c43b95;
+  font-family: BloomsHeadline-Regular;
+  font-size: 80px;
+  margin-bottom: -25%;
+}
+.bg-offer-3 .text .top_text .text_2{
+  color: #fff;
+  font-family: Amstagram;
+  font-size: 90px;
+  position: relative;
+  z-index: 4;
+  transform: rotate(-10deg);
+  margin-bottom: -110px;
+}
+.bg-offer-3 .text .top_text .text_3{
+  color: #c43b95;
+  font-family: BloomsHeadline-Regular;
+  font-size: 90px;
+  margin-bottom: -110px;
+}
+.bg-offer-3 .text .top_text .text_4{
+  color: #fff;
+  font-family: BloomsHeadline-Regular;
+  font-size: 100px;
+  font-style: italic;
+  margin-bottom: -60px;
+}
+.bg-offer-3 .text .sub_text .text_1{
+  color: #fff;
+  font-family: BloomsHeadline-Regular;
+  font-size: 35px;
+  font-style: italic;
+  margin-bottom: -20px;
+}
+.bg-offer-3 .text .sub_text .text_2{
+  color: #fff;
+  font-family: BloomsHeadline-Regular;
+  font-size: 35px;
+  font-style: italic;
+  margin-bottom: -20px;
+}
+.bg-offer-3 .text .sub_text .text_3{
+  color: #c43b95;
+  font-family: BloomsHeadline-Regular;
+  font-size: 30px;
+  font-style: italic;
+}
+.bg-offer-3 .hand_mobile {
+  margin-left: 100px;
+}
+.bg-offer-3 .img_grace_hand_mobile{
+  position: absolute;
+  z-index: 3;
+  transform: rotate(180deg);
+  right: -160px;
+  margin-top: -60px;
+}
+.bg-offer-4{
+  background-image: url(assets/images/bg/slate-texture-background.jpg);
 }
 .bg-offer {
   background-position: center center;
