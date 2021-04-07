@@ -4701,6 +4701,16 @@ ul.rating{
 .pp_food__thumb{
   position:relative
 }
+.to_hide {
+  width: 300px;
+  height: 150px;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+  margin-bottom: -68px;
+  margin-top: -90px;
+  margin-right: -90px;
+}
 .see_all_on_maps a {
   width: 30%;
   font-size: 25px;
