@@ -2,7 +2,7 @@
   <div class="container my-4">
     <div class="section__title service__align--center mb-5">
       <h2 class="title__line">Nos Nouilles</h2>
-      <span><em></em></span>
+      <!-- <span><em></em></span> -->
     </div>
     
     <!--Carousel Wrapper-->
@@ -10,27 +10,32 @@
       
       <!--Controls-->
       <div class="controls-top">
-        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next">
+          <i class="fa fa-chevron-right"></i>
+        </a>
       </div>
       <!--/.Controls-->
       
       <!--Indicators-->
-      <ol class="carousel-indicators hide-mobile">
+      <!-- <ol class="carousel-indicators hide-mobile">
         <ng-container *ngFor="let list of chunk(productList, 3); let array_i = index">
           <li data-target="#multi-item-example" [attr.data-slide-to]="array_i" [class.active]="array_i==0"></li>
         </ng-container>
-      </ol>
+      </ol> -->
       <!--/.Indicators-->
       
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
-        <ng-container *ngFor="let list of chunk(productList, chunckSize); let array_i = index">
+        <ng-container *ngFor="let list of chunk(nouillesList, chunckSize); let array_i = index">
           <div class="carousel-item" [class.active]="array_i==0">
             <div class="row justify-content-center">
               <ng-container *ngFor="let menu of list; let im = index">
-                <app-product-card class="col-md-4 col-auto" [city]="city" [zone]="zone"
-                [family_name]="menu.family" [menu]="menu" [ngClass]="{'clearfix d-none d-md-block':im!=0}" (click)="showPopup(menu)"></app-product-card>
+                <app-product-card-v4 class="col-md-4 col-auto" [city]="city" [zone]="zone"
+                [family_name]="menu.family" [menu]="menu" [ngClass]="{'clearfix d-none d-md-block':im!=0}" (click)="showPopup(menu)">
+              </app-product-card-v4>
               </ng-container>
             </div>
           </div>

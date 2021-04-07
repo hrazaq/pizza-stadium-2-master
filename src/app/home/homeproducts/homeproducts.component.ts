@@ -44,7 +44,7 @@ export class HomeproductsComponent implements OnInit {
     {name: "Entrées", picture: 'assets/images/thai/NEMx02.png'},
     {name: "Nouilles", picture: 'assets/images/thai/Nouilles_Legumes.png'},
     {name: "Salade Thai", picture: 'assets/images/thai/Salade_thai.png'}
-  ]
+  ];
 
   constructor(private communicationService: CommunicationService, private apiService: ApiService, private dataService: DataService, private toastr: ToastrService) {
     this.apiService.getFamilies(this.user.id).subscribe((FamilyList: Family[])=>{

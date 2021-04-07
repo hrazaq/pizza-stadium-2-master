@@ -14,6 +14,7 @@ import {GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FooterV2Component } from './components/footer-v2/footer-v2.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { ServicesComponent } from './home/services/services.component';
 import { HomeComponent } from './home/home.component';
@@ -34,6 +35,7 @@ import { CmdModesComponent } from './components/cmd-modes/cmd-modes.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 
 import { ProductCardV3Component } from "./product-card-v3/product-card-v3.component";
+import { ProductCardV4Component } from "./product-card-v4/product-card-v4.component";
 
 registerLocaleData(localeFr);
 
@@ -76,7 +78,9 @@ registerLocaleData(localeFr);
     PopupCartComponent,
     SearchFormComponent,
     CmdModesComponent,
-    ProductCardV3Component
+    ProductCardV3Component,
+    ProductCardV4Component,
+    FooterV2Component
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'},

@@ -4701,7 +4701,7 @@ ul.rating{
 .pp_food__thumb{
   position:relative
 }
-.to_hide {
+/* .to_hide {
   width: 300px;
   height: 150px;
   background-color: #fff;
@@ -4710,7 +4710,7 @@ ul.rating{
   margin-bottom: -68px;
   margin-top: -90px;
   margin-right: -90px;
-}
+} */
 .see_all_on_maps a {
   width: 30%;
   font-size: 25px;
@@ -4720,7 +4720,10 @@ ul.rating{
   padding: 10px !important;
 }
 #section1{
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  position: relative;
+  z-index: 4;
+  background-color: white;
 }
 .pp__food__prize{
   background:#c43b95;
@@ -5462,23 +5465,50 @@ ul.rating{
   text-align:left;
   width: 100%;
 }
-
+.menu__grid__item_bottom {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  text-align:left;
+  width: 100%;
+}
 .menu__grid__item .img_item{
   position: absolute;
   z-index: 3;
   top: -80px;
   left: 2%;
 }
+.menu__grid__item_bottom .img_item_bottom {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  left: 19%;
+}
 .menu__grid__item .card_item{
   height: 300px;
   width: 250px;
   border-radius: 50px;
+}
+.menu__grid__item_bottom .card_item_bottom{
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 0.2px;
 }
 .menu__grid__item .card_item p{
   font-family: Go3v2;
   font-size: 30px;
   color: #c43b95;
   margin-top: 60%;
+}
+.menu__grid__item_bottom .card_item_bottom p{
+  font-family: Oswald-Bold;
+  font-size: 20px;
+  color: #000;
+  width: 2px;
+  padding-left: 30%;
 }
 .menu__grid__item .black_card_item{
   height: 300px;
@@ -9941,6 +9971,110 @@ input[type=submit]{
 .how-it-works-block .feature-item-wrap{
   padding:0 11%
 }
+.how-it-works-block {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  margin-bottom: -200px;
+}
+.bg-offer-4 .img_wook_bobun {
+  position: relative;
+  z-index: -3;
+  bottom: -470px;
+  margin-top: -400px;
+  left: 250px;
+  transform: rotate(180deg);
+}
+.bg-offer-4 .img_flower {
+  position: relative;
+  z-index: -4;
+  bottom: -400px;
+  margin-top: -550px;
+  left: 75px;
+  transform: rotate(-150deg);
+}
+.bg-offer-4 .img_grace_left{
+  position: relative;
+  z-index: -1;
+  bottom: -130px;
+  left: -280px;
+  transform: rotate(-120deg);
+}
+.bg-offer-4 .img_grace_right{
+  position: relative;
+  z-index: -1;
+  top: -750px;
+  margin-left: 1200px;
+  transform: rotate(180deg);
+}
+.bg-offer-4 .savoureux {
+  position: relative;
+  z-index: 4;
+  bottom: -130px;
+  margin-top: -100px;
+  left: 130px;
+  color: #fff;
+  font-size: 40px;
+  font-family: Amstagram;
+}
+.bg-offer-4 .left_arrow {
+  margin-bottom: -280px;
+  margin-left: 180px;
+}
+.bg-offer-4 .right_arrow {
+  margin-bottom: -700px;
+  margin-left: 600px;
+  transform: rotate(-70deg);
+}
+.bg-offer-4 .delicieux{
+  position: relative;
+  z-index: 4;
+  bottom: -450px;
+  margin-top: -80px;
+  margin-left: 830px;
+  color: #fff;
+  font-size: 40px;
+  font-family: Amstagram;
+}
+.bg-offer-4 .text_offer_4 {
+  position: relative;
+  z-index: 4;
+  top: -350px;
+  margin-left: 700px;
+  text-align: center;
+  margin-top: -50px;
+}
+.bg-offer-4 .text_offer_4 .best{
+  color: #c43b95;
+  font-size: 35px;
+  font-family: Pacifico;
+  margin-bottom: -40px;
+}
+.bg-offer-4 .separator {
+  border-radius: 20px;
+  border-style: none;
+  width: 80px;
+  height: 5px;
+  background-color: rgb(199, 131, 4);
+  margin-bottom: -20px;
+}
+.bg-offer-4 .text_offer_4 .chez{
+  color: #fff;
+  font-size: 70px;
+  font-family: Amstagram;
+  margin-bottom: -80px;
+}
+.bg-offer-4 .text_offer_4 .home{
+  color: #fff;
+  font-size: 100px;
+  font-family: Go3v2;
+  margin-bottom: -120px;
+}
+.bg-offer-4 .text_offer_4 .wok {
+  color: #fff;
+  font-size: 100px;
+  font-family: Go3v2;
+}
 .section__title span{
   width:120px;
   height:2px;
@@ -12578,8 +12712,15 @@ ul.nav.top-carte-menu li.nav-item > a.active {
   right: -160px;
   margin-top: -60px;
 }
-.bg-offer-4{
+.bg-offer-4 {
   background-image: url(assets/images/bg/slate-texture-background.jpg);
+  height: 650px;
+  position: relative;
+  z-index: -5;
+}
+.bg-offer-4 .imgs {
+  position: relative;
+  z-index: -1;
 }
 .bg-offer {
   background-position: center center;

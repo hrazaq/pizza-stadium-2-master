@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/api.service';
 import { DataService } from 'src/app/data.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommunicationService } from 'src/app/communication.service';
+import { ThaiProduct } from 'src/app/models/thaiProduct';
 
 @Component({
   selector: 'app-suggestions',
@@ -37,6 +38,13 @@ export class SuggestionsComponent implements OnInit {
   onResize(event) {
     this.chunckSize = window.innerWidth<960 ? 1 : 3;
   } */
+
+  // Dump data for Nouilles, I didnt found them in the API
+  nouillesList: ThaiProduct[] = [
+    {name: 'Nouilles Végétarienne', picture: 'assets/images/thai/Nouilles_Legumes.png'},
+    {name: 'Nouilles Boeuf', picture: 'assets/images/thai/Nouilles_Boeuf.png'},
+    {name: "Nouilles Crevette", picture: 'assets/images/thai/nouilles_crevettes.png'}
+  ];
   
   constructor(private communicationService: CommunicationService, private apiService: ApiService, private dataService: DataService, private toastr: ToastrService) {
     this.apiService.getFamilies(this.user.id).subscribe((FamilyList: Family[])=>{
