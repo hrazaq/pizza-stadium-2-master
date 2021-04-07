@@ -1,1 +1,36 @@
-<p>footer-v2 works!</p>
+<footer class="footer__area footer--1">
+    <div class="copyright__footer">
+       <img class="logo_wok_home" src="assets/images/thai/Home_wok_logo.png" width="200" height="200">
+       <div class="row">
+            <div class="col" *ngIf="social.facebook">
+                <a href="{{social.facebook}}" target="_blank" title="Contact Restaurant Livraison">
+                    <i class="fa fa-facebook"></i>
+                 </a>
+            </div>
+            <div class="col" *ngIf="social.twitter">
+                <a href="{{social.twitter}}" target="_blank" title="Contact Restaurant Livraison">
+                    <i class="fa fa-twitter"></i>
+                 </a>
+                </div>
+            <div class="col" *ngIf="social.instagram">
+                <a href="{{social.instagram}}" target="_blank" title="Contact Restaurant Livraison">
+                    <i class="fa fa-instagram"></i>
+                 </a>
+            </div>
+       </div> 
+       <div class="text_contact_footer">
+            <p class="number_contact">01 70 44 18 72</p>
+            <p class="separator_footer">|</p>
+            <p class="address_footer">15 rue des Chantiers 780000 VERSAILLES</p>
+       </div>
+       <div class="text_copyright_footer">
+            <p class="rights">@Tous droits réservés</p>
+            <p class="separator_footer_2">|</p>
+            <p class="eat_collect">Eat & Collect</p>
+        </div>
+        <button class="btn btn_find_us">
+            <img src="assets/icons/find.svg" width="20" height="20">
+            Nous Trouver sur la carte
+        </button>
+    </div>
+ </footer>
